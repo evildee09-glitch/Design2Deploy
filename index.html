@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design to Deploy - Free & Safe App Ecosystem</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- FIXED FULLSCREEN LOGO BACKGROUND WATERMARK -->
+  <div class="fixed-logo-bg" aria-hidden="true"></div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-badge"><i class="fa-solid fa-code-branch"></i></div>
+        <div class="brand-text-group">
+          <span class="brand-title">Design <span class="highlight-orange">to</span> Deploy</span>
+          <span class="brand-subtitle"><i class="fa-solid fa-shield-check"></i> Verified Safe & Free Releases</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <button class="nav-btn request-btn" id="openRequestBtn">
+          <i class="fa-solid fa-lightbulb"></i> Request App
+        </button>
+        <button class="nav-btn admin-btn" id="openAdminAuthBtn">
+          <i class="fa-solid fa-key"></i> <span id="adminBtnText">Admin Access</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO & ANALYTICS HEADER -->
+  <header class="hero-section">
+    <div class="hero-badge">
+      <i class="fa-solid fa-shield-halved"></i> 100% Free & Malware-Free Verified Software
+    </div>
+    <h1 class="hero-title">Empowering Ideas from <span class="text-gradient">Design to Deployment</span></h1>
+    <p class="hero-description">
+      Explore, download, and utilize high-performance applications designed with safety, reliability, and precision. Built for developers, enthusiasts, and modern workflows.
+    </p>
+
+    <!-- LIVE ECOSYSTEM ANALYTICS COUNTERS -->
+    <div class="analytics-grid">
+      <div class="analytic-card">
+        <div class="analytic-icon icon-cyan"><i class="fa-solid fa-cubes"></i></div>
+        <div class="analytic-info">
+          <span class="analytic-number" id="statTotalApps">0</span>
+          <span class="analytic-label">Live Applications</span>
+        </div>
+      </div>
+      <div class="analytic-card">
+        <div class="analytic-icon icon-orange"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+        <div class="analytic-info">
+          <span class="analytic-number" id="statTotalDownloads">0</span>
+          <span class="analytic-label">Global Downloads / Active Users</span>
+        </div>
+      </div>
+      <div class="analytic-card">
+        <div class="analytic-icon icon-green"><i class="fa-solid fa-comments"></i></div>
+        <div class="analytic-info">
+          <span class="analytic-number" id="statTotalRequests">0</span>
+          <span class="analytic-label">Community Proposals</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="main-container">
+
+    <!-- SEARCH & CATEGORY FILTER BAR -->
+    <div class="filter-section">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search applications by keyword, platform, or tags..." />
+      </div>
+      <div class="category-pills" id="categoryPills">
+        <button class="pill-btn active" data-category="ALL">All Applications</button>
+        <button class="pill-btn" data-category="Utility">Utility Tools</button>
+        <button class="pill-btn" data-category="Mobile App">Mobile Apps</button>
+        <button class="pill-btn" data-category="Developer Tool">Developer Tools</button>
+        <button class="pill-btn" data-category="Security">Security</button>
+      </div>
+    </div>
+
+    <!-- MAIN APPS GRID -->
+    <section class="section-block">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-rocket"></i> Available Apps Showcase</h2>
+        <span class="live-indicator"><i class="fa-solid fa-circle"></i> Real-time sync enabled</span>
+      </div>
+      <div class="app-cards-grid" id="appCardsGrid">
+        <!-- Dynamic Cards populated via JS -->
+      </div>
+    </section>
+
+    <!-- TWO-COLUMN LAYOUT FOR ROADMAP & SAFETY GUARANTEE -->
+    <div class="two-col-grid">
+      <!-- ROADMAP UPDATES -->
+      <section class="section-block roadmap-block">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-bullhorn"></i> Upcoming Releases & Dev Updates</h2>
+        </div>
+        <div class="updates-timeline" id="updatesTimeline">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- SAFETY & FREEDOM PROMISE -->
+      <section class="section-block guarantee-block">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-user-shield"></i> Our Commitment & Security</h2>
+        </div>
+        <div class="guarantee-content">
+          <div class="guarantee-item">
+            <div class="g-icon"><i class="fa-solid fa-sack-xmark"></i></div>
+            <div>
+              <h3>Always 100% Free</h3>
+              <p>Every tool, utility, and application published here is free to download and use without hidden paywalls or subscription traps.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="g-icon"><i class="fa-solid fa-bug-slash"></i></div>
+            <div>
+              <h3>Clean & Virus-Free</h3>
+              <p>Each release build undergoes static analysis, checksum validation, and malware scanning before deployment to ensure complete safety.</p>
+            </div>
+          </div>
+          <div class="guarantee-item">
+            <div class="g-icon"><i class="fa-solid fa-lock"></i></div>
+            <div>
+              <h3>Client-Side Cryptography</h3>
+              <p>Administrative authentication relies on local SHA-256 cryptographic hashing—zero plain-text keys are stored or exposed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 <strong>Design to Deploy</strong>. Engineered for Safety & Performance.</p>
+      <div class="footer-links">
+        <a href="#openRequestBtn" id="footerRequestLink"><i class="fa-solid fa-lightbulb"></i> Request App</a>
+        <a href="#" id="footerAdminLink"><i class="fa-solid fa-shield-halved"></i> Admin Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- REQUEST APPLICATION MODAL -->
+  <div class="modal-overlay" id="requestModal">
+    <div class="modal-content glass-card">
+      <button class="modal-close-btn" id="closeRequestModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <i class="fa-solid fa-paper-plane modal-icon text-cyan"></i>
+        <h3>Recommend or Request an Application</h3>
+        <p>Have an idea for a software tool or app? Let us know what we should build and deploy next!</p>
+      </div>
+      <form id="requestForm" class="modal-form">
+        <div class="form-group">
+          <label for="reqTitle">App Name / Core Idea</label>
+          <input type="text" id="reqTitle" placeholder="e.g. Offline Serial Terminal Monitor" required />
+        </div>
+        <div class="form-group">
+          <label for="reqCategory">Target Platform / Category</label>
+          <select id="reqCategory">
+            <option value="Mobile App">Mobile Application (Android/iOS)</option>
+            <option value="Utility Tool">Desktop Utility Tool</option>
+            <option value="Developer Tool">Developer / API Tool</option>
+            <option value="Security">Security & Auditing</option>
+            <option value="Other">Other Category</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reqDescription">Feature Details & Description</label>
+          <textarea id="reqDescription" rows="4" placeholder="Explain what problem this app solves and features you'd love to see..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="reqContact">Your Name or Contact Info (Optional)</label>
+          <input type="text" id="reqContact" placeholder="e.g. Alex (alex@example.com)" />
+        </div>
+        <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MASTER KEY AUTHENTICATION MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-content glass-card auth-card">
+      <button class="modal-close-btn" id="closeAuthModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="mfa-badge"><i class="fa-solid fa-shield-keyhole"></i> Zero-Knowledge Auth</div>
+        <h3>Secure Admin Gateway</h3>
+        <p>Enter your cryptographic Master Key to access administrative CMS operations.</p>
+      </div>
+      <form id="authForm" class="modal-form">
+        <div class="form-group">
+          <label for="masterKeyInput">Master Key Passphrase</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="masterKeyInput" placeholder="Enter secure master key..." required autocomplete="current-password" />
+            <button type="button" class="toggle-pwd-btn" id="togglePwdBtn"><i class="fa-solid fa-eye"></i></button>
+          </div>
+          <span class="auth-hint"><i class="fa-solid fa-circle-info"></i> Authenticated locally via SHA-256 cryptographic digest. Default key is <code class="default-code">admin123</code></span>
+        </div>
+        <div class="error-msg" id="authErrorMsg"></div>
+        <button type="submit" class="submit-btn admin-submit"><i class="fa-solid fa-right-to-bracket"></i> Authenticate Key</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMINISTRATIVE CMS DRAWER / PANEL -->
+  <div class="modal-overlay" id="cmsDrawer">
+    <div class="modal-content glass-card cms-panel-card">
+      <div class="cms-header">
+        <div>
+          <h2><i class="fa-solid fa-sliders"></i> Design to Deploy Admin Portal</h2>
+          <span class="status-verified"><i class="fa-solid fa-check-double"></i> Authenticated via SHA-256 Hash Match</span>
+        </div>
+        <div class="cms-header-actions">
+          <button class="nav-btn logout-btn" id="cmsLogoutBtn"><i class="fa-solid fa-lock"></i> Lock CMS</button>
+          <button class="modal-close-btn" id="closeCmsDrawer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <div class="cms-tabs">
+        <button class="tab-btn active" data-tab="tabApps"><i class="fa-solid fa-cubes"></i> Manage Apps</button>
+        <button class="tab-btn" data-tab="tabAddApp"><i class="fa-solid fa-square-plus"></i> Add New App</button>
+        <button class="tab-btn" data-tab="tabUpdates"><i class="fa-solid fa-bullhorn"></i> Dev Roadmap</button>
+        <button class="tab-btn" data-tab="tabSecurity"><i class="fa-solid fa-key"></i> Key Management</button>
+      </div>
+
+      <!-- TAB 1: MANAGE APPS & COUNTERS -->
+      <div class="tab-content active" id="tabApps">
+        <h3>Current Published Apps</h3>
+        <div class="cms-table-container">
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>App Name</th>
+                <th>Category</th>
+                <th>Version</th>
+                <th>Usage Counter</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cmsAppsTableBody">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 2: ADD NEW APP -->
+      <div class="tab-content" id="tabAddApp">
+        <h3 id="appFormHeading">Publish New Application</h3>
+        <form id="cmsAppForm" class="modal-form grid-form">
+          <input type="hidden" id="editAppId" value="" />
+          <div class="form-group">
+            <label for="appTitle">Application Name</label>
+            <input type="text" id="appTitle" placeholder="e.g. POS & Inventory Manager" required />
+          </div>
+          <div class="form-group">
+            <label for="appCategory">Category</label>
+            <select id="appCategory">
+              <option value="Mobile App">Mobile App</option>
+              <option value="Utility Tool">Utility Tool</option>
+              <option value="Developer Tool">Developer Tool</option>
+              <option value="Security">Security</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appVersion">Version Badge</label>
+            <input type="text" id="appVersion" placeholder="e.g. v1.2.0" required />
+          </div>
+          <div class="form-group">
+            <label for="appBadge">Status Badge</label>
+            <input type="text" id="appBadge" placeholder="e.g. Stable Release, New" required />
+          </div>
+          <div class="form-group full-width">
+            <label for="appDownloadUrl">Download URL / Package File Link</label>
+            <input type="url" id="appDownloadUrl" placeholder="https://domain.com/files/app-installer.apk" required />
+          </div>
+          <div class="form-group full-width">
+            <label for="appDescription">Short Description</label>
+            <textarea id="appDescription" rows="3" placeholder="Brief explanation of capabilities and build stack..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="appCounter">Initial / Override Usage Counter</label>
+            <input type="number" id="appCounter" value="0" min="0" required />
+          </div>
+          <div class="form-group full-width form-actions">
+            <button type="submit" class="submit-btn" id="saveAppBtn"><i class="fa-solid fa-floppy-disk"></i> Save & Deploy Application</button>
+            <button type="button" class="cancel-btn" id="cancelEditAppBtn" style="display:none;">Cancel Edit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- TAB 3: DEV ROADMAP UPDATES -->
+      <div class="tab-content" id="tabUpdates">
+        <h3>Post Release Roadmap Update</h3>
+        <form id="cmsUpdateForm" class="modal-form grid-form">
+          <div class="form-group">
+            <label for="updTitle">Update Title</label>
+            <input type="text" id="updTitle" placeholder="e.g. Android SDK 34 Migration" required />
+          </div>
+          <div class="form-group">
+            <label for="updStatus">Phase / Status Tag</label>
+            <select id="updStatus">
+              <option value="In Progress">In Progress</option>
+              <option value="Planned">Planned</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="updDetails">Update Details</label>
+            <textarea id="updDetails" rows="3" placeholder="Provide progress notes, milestone details, or targeted release dates..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fa-solid fa-bullhorn"></i> Broadcast Dev Update</button>
+        </form>
+
+        <h3 style="margin-top:24px;">Published Development Updates</h3>
+        <div id="cmsUpdatesList" class="cms-updates-list">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+      <!-- TAB 4: MASTER KEY SECURITY MANAGEMENT -->
+      <div class="tab-content" id="tabSecurity">
+        <h3>Change Administrative Master Key</h3>
+        <p class="section-desc">Updating your Master Key will re-calculate its SHA-256 hash locally. Ensure you remember your new key phrase as plain text is never stored anywhere.</p>
+        <form id="changeKeyForm" class="modal-form">
+          <div class="form-group">
+            <label for="newMasterKey">New Master Key Passphrase</label>
+            <input type="password" id="newMasterKey" placeholder="Enter new secret master key..." required minlength="6" />
+          </div>
+          <div class="form-group">
+            <label for="confirmMasterKey">Confirm New Master Key</label>
+            <input type="password" id="confirmMasterKey" placeholder="Re-enter new master key..." required minlength="6" />
+          </div>
+          <button type="submit" class="submit-btn admin-submit"><i class="fa-solid fa-key"></i> Update Master Key Hash</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTIFICATION TOAST -->
+  <div id="toast" class="toast-notification"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
