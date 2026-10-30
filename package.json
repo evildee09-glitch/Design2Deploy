@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Design to Deploy - app showcase with admin CMS",
-  "engines": { "node": "22.x" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@upstash/redis": "^1.34.0"
+  },
+  "scripts": {
+    "dev": "node dev-server.js"
   }
 }

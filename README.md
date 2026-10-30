@@ -16,3 +16,11 @@ First load seeds the 4 sample apps and 2 roadmap items; edit or delete them in t
 - After you change the password inside the portal, it is stored (hashed) in the database and overrides `ADMIN_PASSWORD`. Forgot it? Delete the key `dtd:admin:pw` in the Upstash console, then `ADMIN_PASSWORD` works again.
 - Host app files yourself by putting them in `public/files/` and using `/files/yourapp.apk` as the download URL (Vercel limit: 100 MB per file on the free plan; use GitHub Releases or similar for bigger ones).
 - Local dev: `npm i -g vercel && npm i && vercel dev`. Without database variables it uses a temporary in-memory store.
+
+## Run locally (Windows PowerShell)
+```powershell
+cd path\to\design-to-deploy
+npm install
+npm run dev
+```
+Open http://localhost:3000 - admin password is `admin12345` (change with `$env:ADMIN_PASSWORD="yourpass"` before `npm run dev`). Data is temporary and resets on restart.
